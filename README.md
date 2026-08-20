@@ -218,13 +218,6 @@ To create and execute a Docker container.
 5. Run the image as a container.
 6. Verify the container output.
 7. Manage the container using Docker commands.
-
-### Example
-
-```bash
-docker build -t python-test .
-docker run python-test
-
 # 🧪 Experiment 09 — Running a Container from Docker Hub
 
 ### Aim
@@ -246,9 +239,83 @@ To run a container from Docker Hub using Docker.
 6. Access and verify the running container.
 7. Stop and remove the container when required.
 
+---
+
+# 🧪 Experiment 09 — Running a Container from Docker Hub
+
+### Aim
+
+To run a container from Docker Hub using Docker.
+
+### Tools Used
+
+- Docker
+- Docker Hub
+- Ubuntu
+- Nginx
+- MongoDB
+
+### Procedure
+
+1. Install Docker on the system.
+2. Verify the Docker installation.
+3. Pull a container image from Docker Hub.
+4. Create and run a container using the downloaded image.
+5. Configure the required port mapping.
+6. Access and verify the running container.
+7. Stop and remove the container when required.
+
 ### Example
 
 Run an Ubuntu container:
 
 ```bash
 docker container run -it ubuntu top
+```
+
+Run an Nginx container:
+
+```bash
+docker container run --detach \
+--publish 8080:80 \
+--name nginx nginx
+```
+
+Run a MongoDB container:
+
+```bash
+docker container run --detach \
+--publish 8081:27017 \
+--name mongo \
+mongo:4.4
+```
+
+### Useful Docker Commands
+
+List running containers:
+
+```bash
+docker container ls
+```
+
+Stop a container:
+
+```bash
+docker container stop <container-id>
+```
+
+Remove a container:
+
+```bash
+docker container rm <container-id>
+```
+
+### Result
+
+Containers were successfully pulled from Docker Hub and executed using Docker.
+
+---
+```bash
+docker container run -it ubuntu top
+
+
